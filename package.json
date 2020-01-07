@@ -1,29 +1,29 @@
 {
-  "name": "bitcoin-private-key-fixer",
+  "name": "groestlcoin-private-key-fixer",
   "version": "1.0.0",
-  "description": "Fixes a mistyped character in a Bitcoin WIF Private Key or restores up to 4 missing character.",
+  "description": "Fixes a mistyped character in a Groestlcoin WIF Private Key or restores up to 4 missing character.",
   "main": "app.js",
   "scripts": {
     "standard": "standard **/*.js",
     "mocha": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha **/*.test.js",
     "test": "npm run standard && npm run mocha",
-    "testFixTypo": "node app.js --publicAddress=1CjV8fZz6R8LTwFaAsRUwWFEJbtEXQp7iu --privateKey=x3mopevKjjjcy2mqVbcHs2zWwoujMRpzRyN6mpidwdqmMPmqc6t2",
-    "testFixMissing2": "node app.js --publicAddress=1CjV8fZz6R8LTwFaAsRUwWFEJbtEXQp7iu --privateKey=L_mo_evKjjjcy2mqVbcHs2zWwoujMRpzRyN6mpidwdqmMPmqc6t2",
-    "testFixMissing3": "node app.js --publicAddress=1CjV8fZz6R8LTwFaAsRUwWFEJbtEXQp7iu --privateKey=L3mop__Kjjjcy2mq_bcHs2zWwoujMRpzRyN6mpidwdqmMPmqc6t2",
-    "testFixMissingEnd": "node app.js --publicAddress=1CjV8fZz6R8LTwFaAsRUwWFEJbtEXQp7iu --privateKey=L3mopevKjjjcy2mqVbcHs2zWwoujMRpzRyN6mpidwdqmM"
+    "testFixTypo": "node app.js --publicAddress=FtTQHZZum2wfD6ejZTVLFiPeZhZt8d6WHd --privateKey=x26VJQsQCcBuugSD8f3RE4CZLUVEKx2V8nYLtLDaqJwd4TBeJiyk",
+    "testFixMissing2": "node app.js --publicAddress=FtTQHZZum2wfD6ejZTVLFiPeZhZt8d6WHd --privateKey=L_6V_QsQCcBuugSD8f3RE4CZLUVEKx2V8nYLtLDaqJwd4TBeJiyk",
+    "testFixMissing3": "node app.js --publicAddress=FtTQHZZum2wfD6ejZTVLFiPeZhZt8d6WHd --privateKey=L26VJ__QCcBuugS_8f3RE4CZLUVEKx2V8nYLtLDaqJwd4TBeJiyk",
+    "testFixMissingEnd": "node app.js --publicAddress=FtTQHZZum2wfD6ejZTVLFiPeZhZt8d6WHd --privateKey=L26VJQsQCcBuugSD8f3RE4CZLUVEKx2V8nYLtLDaqJwd4"
   },
   "author": {
-    "name": "Ivaylo Hristov",
-    "url": "https://www.linkedin.com/in/ishristov/"
+    "name": "Groestlcoin Developers",
+    "url": "https://www.groestlcoin.org/"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ishristov/bitcoin-private-key-fixer.git"
+    "url": "https://github.com/Groestlcoin/groestlcoin-private-key-fixer.git"
   },
   "license": "ISC",
   "dependencies": {
-    "bitcoinjs-lib": "^4.0.2",
-    "bs58check": "^2.1.2",
+    "bitcoinjs-lib": "https://github.com/Groestlcoin/groestlcoinjs-lib.git",
+    "bs58grscheck": "https://github.com/Groestlcoin/bs58grscheck.git",
     "lodash": "^4.17.11",
     "qrcode-terminal": "^0.12.0",
     "yargs": "^12.0.5"

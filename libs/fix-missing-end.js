@@ -1,6 +1,6 @@
 const _ = require('lodash')
 const bs58 = require('bs58')
-const bs58check = require('bs58check')
+const bs58grscheck = require('bs58grscheck')
 
 const Progress = require('../Progress')
 const utils = require('../utils')
@@ -13,7 +13,7 @@ const { chars, wildcard } = require('../config')
 // back to a base58 private key so that the hash is encoded too.
 function rehashPrivateKey (badPrivateKey) {
   const buffer = bs58.decode(badPrivateKey)
-  return bs58check.encode(buffer.slice(0, -4))
+  return bs58grscheck.encode(buffer.slice(0, -4))
 }
 
 /**

@@ -3,8 +3,8 @@ const expect = require('expect')
 const fixMissingEnd = require('./fix-missing-end')
 
 describe('Fix missing symbols at the end of a WIF compressed private key', () => {
-  const publicKey = '1CjV8fZz6R8LTwFaAsRUwWFEJbtEXQp7iu'
-  const privateKey = 'L3mopevKjjjcy2mqVbcHs2zWwoujMRpzRyN6mpidwdqmMPmqc6t2'
+  const publicKey = 'FtTQHZZum2wfD6ejZTVLFiPeZhZt8d6WHd'
+  const privateKey = 'L26VJQsQCcBuugSD8f3RE4CZLUVEKx2V8nYLtLDaqJwd4TBeJiyk'
 
   it('should recover private key when missing last 1 character', () => {
     expect(fixMissingEnd(publicKey, privateKey.slice(0, -1))).toEqual(privateKey)
@@ -32,8 +32,8 @@ describe('Fix missing symbols at the end of a WIF compressed private key', () =>
 })
 
 describe('Fix missing symbols at the end of a WIF uncompressed private key', () => {
-  const publicKey = '1LsokirqYNN4ApEV276bLZXFqvFpEo3i1o'
-  const privateKey = '5K1mCzSrt59Piqdfe1gByWhxPCjHP5qddwPXkNk9u94nM94ixPF'
+  const publicKey = 'FYaQj3UMkGfostbARMr55KktqCKqGXikt9'
+  const privateKey = '5JvMTbrwCEs3vd857GR7PtvpewiHcZQSro7eaqJodmr5Ygddtwk'
 
   it('should recover private key when missing last 1 character', () => {
     expect(fixMissingEnd(publicKey, privateKey.slice(0, -1))).toEqual(privateKey)

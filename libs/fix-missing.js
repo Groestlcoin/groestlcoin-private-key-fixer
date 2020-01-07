@@ -1,5 +1,5 @@
 const _ = require('lodash')
-const bs58check = require('bs58check')
+const bs58grscheck = require('bs58grscheck')
 
 const Progress = require('../Progress')
 const utils = require('../utils')
@@ -38,7 +38,7 @@ function fixMissing (publicAddress, badPrivateKey) {
         loopIndex(test, test.indexOf(wildcard))
       } else {
         progress.update()
-        if (bs58check.decodeUnsafe(test) && utils.isRealWIF(publicAddress, test)) {
+        if (bs58grscheck.decodeUnsafe(test) && utils.isRealWIF(publicAddress, test)) {
           found = test
           return false
         }

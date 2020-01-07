@@ -8,9 +8,9 @@ const fixMissing = require('./libs/fix-missing')
 const fixMissingEnd = require('./libs/fix-missing-end')
 
 function printPrivateKey (privateKey) {
-  console.log('Bitcoin WIF private key found:', '\x1b[32m', privateKey, '\x1b[0m')
+  console.log('Groestlcoin WIF private key found:', '\x1b[32m', privateKey, '\x1b[0m')
   console.log('\n\r\x1b[35mATTENTION!\x1b[0m As the original WIF private key was found and shown on this device,\n\rit can no longer be considered safe because your computer might be infected with viruses or malwares.')
-  console.log('\n\rIn order to secure the funds from this private key, it is recommended to transfer them immediately to another wallet.\n\rTo do so you have to sweep the wallet by scanning the QR code below from almost any Bitcoin wallet app (e.g. Coinomi).\n\r', '\x1b[0m')
+  console.log('\n\rIn order to secure the funds from this private key, it is recommended to transfer them immediately to another wallet.\n\rTo do so you have to sweep the wallet by scanning the QR code below from almost any Groestlcoin wallet app (e.g. Coinomi).\n\r', '\x1b[0m')
   qrcode.generate(privateKey)
 }
 
@@ -23,7 +23,7 @@ const argv = yargs
     },
     privateKey: {
       demand: true,
-      describe: 'The Bitcoin private key in a WIF (Wallet Import Format) that we need to fix. Should be 52 characters long',
+      describe: 'The Groestlcoin private key in a WIF (Wallet Import Format) that we need to fix. Should be 52 characters long',
       string: true
     }
   })
@@ -35,7 +35,7 @@ if (utils.isRealWIF(argv.publicAddress, argv.privateKey)) {
   console.log('\x1b[33mThe WIF private key that was provided is correct, no changes are needed.', '\x1b[0m')
 } else {
   if (argv.privateKey.length > 52) {
-    console.log('\x1b[31m', '\n\rThe Bitcoin private key must be in a WIF (Wallet Import Format) and cannot be more than 52 characters long.', '\x1b[0m')
+    console.log('\x1b[31m', '\n\rThe Groestlcoin private key must be in a WIF (Wallet Import Format) and cannot be more than 52 characters long.', '\x1b[0m')
   } else {
     let found = false
 

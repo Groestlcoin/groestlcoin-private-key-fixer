@@ -4,8 +4,8 @@ const fixTypo = require('./fix-typo.js')
 const replaceAt = require('../utils').replaceAt
 
 describe('Fix single typo for compressed WIF', () => {
-  const publicKey = '1CjV8fZz6R8LTwFaAsRUwWFEJbtEXQp7iu'
-  const privateKey = 'L3mopevKjjjcy2mqVbcHs2zWwoujMRpzRyN6mpidwdqmMPmqc6t2'
+  const publicKey = 'FtTQHZZum2wfD6ejZTVLFiPeZhZt8d6WHd'
+  const privateKey = 'L26VJQsQCcBuugSD8f3RE4CZLUVEKx2V8nYLtLDaqJwd4TBeJiyk'
 
   it('should fix typo in private key', () => {
     expect(fixTypo(publicKey, replaceAt(privateKey, 12, 'V'))).toEqual(privateKey)
@@ -22,8 +22,8 @@ describe('Fix single typo for compressed WIF', () => {
 })
 
 describe('Fix single typo for uncompressed WIF', () => {
-  const publicKey = '1LsokirqYNN4ApEV276bLZXFqvFpEo3i1o'
-  const privateKey = '5K1mCzSrt59Piqdfe1gByWhxPCjHP5qddwPXkNk9u94nM94ixPF'
+  const publicKey = 'FYaQj3UMkGfostbARMr55KktqCKqGXikt9'
+  const privateKey = '5JvMTbrwCEs3vd857GR7PtvpewiHcZQSro7eaqJodmr5Ygddtwk'
 
   it('should fix typo in private key', () => {
     expect(fixTypo(publicKey, replaceAt(privateKey, 12, 'V'))).toEqual(privateKey)

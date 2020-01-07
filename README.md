@@ -1,7 +1,4 @@
-# Bitcoin Private Key Fixer
-
-[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![Build Status](https://travis-ci.org/ishristov/bitcoin-private-key-fixer.svg?branch=master)](https://travis-ci.org/ishristov/bitcoin-private-key-fixer)
+# Groestlcoin Private Key Fixer
 
 1. This tool can find and fix a random typo. If the `private key` has 1 symbol that is not correct, the tool will find it and change it to its real value and will restore the original `private key`.
 
@@ -24,13 +21,13 @@ The script will only work if
 1. The `private key` is in a **WIF** compressed or uncompressed format. This is a Wallet Import Format that is 51 or 52 characters long (assuming no missing symbols) and should start with `5` for the 51 chars version and with `K` or `L` for the 52 chars version.
 2. The `public address` that is associated with the `private key` in question is known.
 
-The basic functionality in the popular https://www.bitaddress.org website for generating a single wallet generates the `public address` and the `private key` in those exact formats and they are widely used.
+The basic functionality in the popular https://www.groestlcoin.org/paper.html website for generating a single wallet generates the `public address` and the `private key` in those exact formats and they are widely used.
 
 They look like these:
 
-Public address: `1CjV8fZz6R8LTwFaAsRUwWFEJbtEXQp7iu`
+Public address: `FtTQHZZum2wfD6ejZTVLFiPeZhZt8d6WHd`
 
-Private key: `L3mopevKjjjcy2mqVbcHs2zWwoujMRpzRyN6mpidwdqmMPmqc6t2`
+Private key: `L26VJQsQCcBuugSD8f3RE4CZLUVEKx2V8nYLtLDaqJwd4TBeJiyk`
 
 ## Getting started
 
@@ -39,14 +36,14 @@ If you don't have Node.js you have to [download](https://nodejs.org/en/download/
 Then run the following commands into the `Terminal` (for MacOS) or the `Command Prompt` (for Windows) to download the tool and start playing with it.
 
 ```bash
-git clone https://github.com/ishristov/bitcoin-private-key-fixer.git
-cd bitcoin-private-key-fixer
+git clone https://github.com/Groestlcoin/groestlcoin-private-key-fixer.git
+cd groestlcoin-private-key-fixer
 npm install
 ```
 
 ### Going offline
 
-At this point it would be best to turn off your internet connection and continue offline because your computer might be infected with viruses or malware. It is also recommended to have a mobile Bitcoin wallet nearby so if the private key is indeed recovered, the funds can be immediately transfered to it because the key would no longer be considered safe (some malicious program might intercept it and steal it).
+At this point it would be best to turn off your internet connection and continue offline because your computer might be infected with viruses or malware. It is also recommended to have a mobile Groestlcoin wallet nearby so if the private key is indeed recovered, the funds can be immediately transfered to it because the key would no longer be considered safe (some malicious program might intercept it and steal it).
 
 ### Restore by fixing a single typo
 
@@ -60,10 +57,8 @@ For example
 
 
 ```bash
-node app.js --publicAddress=1CjV8fZz6R8LTwFaAsRUwWFEJbtEXQp7iu --privateKey=L3mopevKjjjcy2mqVbcHs2zWwoujMRpzRyN6mpidwdqmMPmqc6ts
+node app.js --publicAddress=FtTQHZZum2wfD6ejZTVLFiPeZhZt8d6WHd --privateKey=L26VJQsQCcBuugSD8f3RE4CZLUVEKx2V8nYLtLDaqJwd4TBeJiyk
 ```
-
-![privatekeyfound](https://github.com/ishristov/bitcoin-private-key-fixer/blob/master/assets/private-key-found.png)
 
 ### Restore up to 4-5 missing simbols
 
@@ -76,12 +71,10 @@ node app.js --publicAddress={PUBLIC_ADDRESS} --privateKey={PRIVATE_KEY}
 For example (3 missing, replaced with `_`)
 
 ```bash
-node app.js --publicAddress=1CjV8fZz6R8LTwFaAsRUwWFEJbtEXQp7iu --privateKey=L3__pev_jjjcy2mqVbcHs2zWwoujMRpzRyN6mpidwdqmMPmqc6t2
+node app.js --publicAddress=FtTQHZZum2wfD6ejZTVLFiPeZhZt8d6WHd --privateKey=L2__JQsQCc_uugSD8f3RE4CZLUVEKx2V8nYLtLDaqJwd4TBeJiyk
 ```
 
 *Recovering 3 missing symbols is almost instant and recovering 4 should take < 5 minutes on a MacBook Pro.*
-
-![privatekeyprocessing](https://github.com/ishristov/bitcoin-private-key-fixer/blob/master/assets/private-key-processing.png)
 
 ### Restore up to 8-9 missing simbols at the end
 
@@ -94,18 +87,11 @@ node app.js --publicAddress={PUBLIC_ADDRESS} --privateKey={PRIVATE_KEY}
 For example (7 missing)
 
 ```bash
-node app.js --publicAddress=1CjV8fZz6R8LTwFaAsRUwWFEJbtEXQp7iu --privateKey=L3mopevKjjjcy2mqVbcHs2zWwoujMRpzRyN6mpidwdqmM
+node app.js --publicAddress=FtTQHZZum2wfD6ejZTVLFiPeZhZt8d6WHd --privateKey=L26VJQsQCcBuugSD8f3RE4CZLUVEKx2V8nYLtLDaqJwd4
 ```
 
 *Recovering 7 missing symbols is almost instant and recovering 8 should take < 10 minutes on a MacBook Pro.*
 
 ### Going back online
 
-If a private key was successfully recovered and the BTC funds were transfered out, it would be best to first delete the tool by running the following comamnd into the Terminal `cd ../ && rm -Rf bitcoin-private-key-fixer` then restart your computer and only then it would be relatively safe to connect back to the internet.
-
-## Contributions
-If a private key is successfully restored any donation would be highly appreciated.
-
-:beers: [3CyTvaE9GVYTDZD2wPsyu8aZwTT5u9vfbC](https://www.blockchain.com/btc/address/3CyTvaE9GVYTDZD2wPsyu8aZwTT5u9vfbC)
-
-[![Donation link with qr code](https://blockchain.info/qr?data=3CyTvaE9GVYTDZD2wPsyu8aZwTT5u9vfbC&size=200)](https://www.blockchain.com/btc/address/3CyTvaE9GVYTDZD2wPsyu8aZwTT5u9vfbC)
+If a private key was successfully recovered and the GRS funds were transfered out, it would be best to first delete the tool by running the following comamnd into the Terminal `cd ../ && rm -Rf groestlcoin-private-key-fixer` then restart your computer and only then it would be relatively safe to connect back to the internet.
