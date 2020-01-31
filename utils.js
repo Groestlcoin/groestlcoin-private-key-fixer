@@ -1,4 +1,4 @@
-const bitcoin = require('bitcoinjs-lib')
+const bitcoin = require('groestlcoinjs-lib')
 
 function isCompressedWIF (privateKey) {
   if (privateKey.length === 52) {

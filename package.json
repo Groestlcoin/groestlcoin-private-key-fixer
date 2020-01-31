@@ -22,8 +22,8 @@
   },
   "license": "ISC",
   "dependencies": {
-    "bitcoinjs-lib": "https://github.com/Groestlcoin/groestlcoinjs-lib.git",
-    "bs58grscheck": "https://github.com/Groestlcoin/bs58grscheck.git",
+    "groestlcoinjs-lib": "^4.0.2",
+    "bs58grscheck": "^2.1.2",
     "lodash": "^4.17.11",
     "qrcode-terminal": "^0.12.0",
     "yargs": "^12.0.5"
